@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import React, { Component, Fragment } from 'react';
 import { ParallaxProvider } from 'react-scroll-parallax';
-
 import Hero from '../components/Hero';
 import SocialLinks from '../components/SocialLinks';
+import Trees from '../components/Trees';
 
 /*
 gtag events for later reference
@@ -17,15 +17,18 @@ gtag.event({
 })
 */
 
+
 class home extends Component {
   getImage() {
-    const items = [
-      'https://live.staticflickr.com/1831/43151326755_0c028664fb_h.jpg',
-      'https://live.staticflickr.com/4429/36422307826_2699e07837_h.jpg',
-      'https://live.staticflickr.com/1812/43359764724_38b9d3a22b_h.jpg',
-      'https://live.staticflickr.com/4423/36299960852_0eee57ccab_h.jpg'
-    ];
-    return items[Math.floor(Math.random() * items.length)];
+    // May come back to this for now I just like the hallway image
+    // const items = [
+    //   'https://live.staticflickr.com/1831/43151326755_0c028664fb_h.jpg',
+    //   'https://live.staticflickr.com/4429/36422307826_2699e07837_h.jpg',
+    //   'https://live.staticflickr.com/1812/43359764724_38b9d3a22b_h.jpg',
+    //   'https://live.staticflickr.com/4423/36299960852_0eee57ccab_h.jpg'
+    // ];
+    // return items[Math.floor(Math.random() * items.length)];
+    return 'https://live.staticflickr.com/1812/43359764724_38b9d3a22b_h.jpg';
   }
 
   componentDidMount() {
@@ -49,9 +52,10 @@ class home extends Component {
               imagePath={this.getImage()}
               fullHeight="true"
               heading="THAT.us"
-              subheading="It's not a you, or I, or even them, it's all of US, together!"
+              subheading="It's not a you, or I, or even them,<br/>it's all of US, together!"
             >
               <div className="_form_10" />
+              <Trees />
               <SocialLinks />
             </Hero>
           </Fragment>
