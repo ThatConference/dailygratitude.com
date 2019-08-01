@@ -17,7 +17,6 @@ gtag.event({
 })
 */
 
-
 class home extends Component {
   getImage() {
     // May come back to this for now I just like the hallway image
@@ -44,15 +43,15 @@ class home extends Component {
     return (
       <Fragment>
         <Head>
-          <title>THAT.us</title>
+          <title>DailyGratitude.com</title>
         </Head>
         <ParallaxProvider>
           <Fragment>
             <Hero
               imagePath={this.getImage()}
               fullHeight="true"
-              heading="THAT.us"
-              subheading="It's not a you, or I, or even them,<br/>it's all of US, together!"
+              heading="Daily Gratitude"
+              subheading="Spreading good vibes inside and out."
             >
               <div className="_form_10" />
               <Trees />

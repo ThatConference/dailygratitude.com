@@ -1,9 +1,8 @@
 import Head from 'next/head';
 
-const NAME = 'THAT.us';
-const DESCRIPTION =
-  "It's not a you, or I, or even them, it's all of US, together!";
-const URL = 'https://that.us/';
+const NAME = 'DailyGratitude.com';
+const DESCRIPTION = 'Spreading good vibes inside and out.';
+const URL = 'https://dailygratitude.com/';
 
 const Meta = () => (
   <Head>
