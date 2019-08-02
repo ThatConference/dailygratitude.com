@@ -55,14 +55,15 @@ const BannerHeader = styled.div`
   h1 {
     margin: 0;
     img {
-      max-width: 60%;
+      width: 60%;
+      max-width: 520px;
 
       ${below.med`
         padding-top: 0;
       `};
 
       ${below.med`
-        max-width: 70%;
+        width: 70%;
       `};
     }
     
