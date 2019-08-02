@@ -10,6 +10,12 @@ const SocialLinksContainer = styled.div`
     justify-content: center;
   `};
 
+  a {
+    ${below.small`
+      height: 27px;
+    `};
+  }
+
   a:hover {
     svg {
       fill: ${({ theme }) => theme.colors.primary};
@@ -18,7 +24,7 @@ const SocialLinksContainer = styled.div`
 `;
 
 const SocialLinks = props => {
-  return(
+  return (
     <SocialLinksContainer>
       <a href="https://www.facebook.com/groups/2257593914570023/">
         <Icon icon="facebook" />
@@ -29,7 +35,7 @@ const SocialLinks = props => {
       <a href="https://twitter.com/ThatConference">
         <Icon icon="twitter" />
       </a>
-      <a href="https://github.com/ThatConference/that.us">
+      <a href="https://github.com/ThatConference/dailygratitude.com">
         <Icon icon="github" />
       </a>
     </SocialLinksContainer>

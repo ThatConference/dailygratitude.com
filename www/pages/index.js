@@ -4,6 +4,7 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import Hero from '../components/Hero';
 import SocialLinks from '../components/SocialLinks';
 import Trees from '../components/Trees';
+import styled from 'styled-components';
 
 /*
 gtag events for later reference
@@ -17,6 +18,13 @@ gtag.event({
 })
 */
 
+const FormDiv = styled.div`
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 class home extends Component {
   getImage() {
     // May come back to this for now I just like the hallway image
@@ -27,13 +35,13 @@ class home extends Component {
     //   'https://live.staticflickr.com/4423/36299960852_0eee57ccab_h.jpg'
     // ];
     // return items[Math.floor(Math.random() * items.length)];
-    return 'https://live.staticflickr.com/1812/43359764724_38b9d3a22b_h.jpg';
+    return 'https://live.staticflickr.com/1834/30145023228_7a88f39e3d_h.jpg';
   }
 
   componentDidMount() {
     const script = document.createElement('script');
-
-    script.src = 'https://thatconference.activehosted.com/f/embed.php?id=10';
+    
+    script.src = 'https://thatconference.activehosted.com/f/embed.php?id=12';
     script.async = true;
 
     document.body.appendChild(script);
@@ -53,7 +61,9 @@ class home extends Component {
               heading="Daily Gratitude"
               subheading="Spreading good vibes inside and out."
             >
-              <div className="_form_10" />
+              <FormDiv>
+                <div className="_form_12" />
+              </FormDiv>
               <Trees />
               <SocialLinks />
             </Hero>

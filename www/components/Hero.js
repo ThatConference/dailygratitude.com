@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { ParallaxBanner } from 'react-scroll-parallax';
-import {above, below} from '../utitlies/breakpoint.js';
+import { above, below } from '../utitlies/breakpoint.js';
 
 const HeroImage = styled.div`
-  height: ${({fullHeight}) => fullHeight ? '100vh' : '60vh'};
+  height: ${({ fullHeight }) => fullHeight ? '100vh' : '60vh'};
   max-width: 100%;
   background-position: center;
   background-size: cover;
@@ -19,17 +19,22 @@ const HeroContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgba(0,0,0,0.6);
+  align-items: center;
+  background-color: rgba(0,0,0,0.7);
 
   color: ${({ theme }) => theme.colors.light};
 
   svg {
-    margin-right: 12px;
+    margin: 8px;
     height: 30px;
     fill: ${({ theme }) => theme.colors.light};
 
     ${below.med`
       height: 20px;
+    `};
+
+    ${below.small`
+      margin: 2px 8px;
     `};
   }
 
@@ -45,16 +50,22 @@ const BannerHeader = styled.div`
   display: flex;
   flex-direction: column;
 
-  ${below.med`
-    text-align: center;
-  `};
+  text-align: center;
 
   h1 {
-    font-size: 7rem;
     margin: 0;
-    line-height: 1.1;
-    font-weight: 500;
-    color: ${({ theme }) => theme.colors.light};
+    img {
+      max-width: 60%;
+
+      ${below.med`
+        padding-top: 0;
+      `};
+
+      ${below.med`
+        max-width: 70%;
+      `};
+    }
+    
   }
   h2 {
     font-size: 2.5rem;
@@ -63,11 +74,15 @@ const BannerHeader = styled.div`
     line-height: 1.2;
     color: ${({ theme }) => theme.colors.light};
     padding-top: 5px;
+
+    ${below.med`
+      font-size: 2rem;
+    `};
   }
 `;
 
 const Hero = props => {
-  return(
+  return (
     <HeroImage fullHeight={props.fullHeight} >
       <ParallaxBanner
         layers={[
@@ -82,8 +97,10 @@ const Hero = props => {
       />
       <HeroContainer>
         <BannerHeader fullHeight={props.fullHeight}>
-          <h1>{props.heading}</h1>
-          <h2>{props.subheading}</h2>
+          <h1>
+            <img src="../static/images/daily-gratitude-logo.png" alt="THAT.us" />
+          </h1>
+          <h2 dangerouslySetInnerHTML={{ __html: props.subheading }} />
         </BannerHeader>
         {props.children}
       </HeroContainer>

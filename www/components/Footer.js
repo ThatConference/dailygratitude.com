@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import IconText from './IconText';
 import SocialLinks from './SocialLinks';
-import {above, below} from '../utitlies/breakpoint.js';
+import { above, below } from '../utitlies/breakpoint.js';
 
 const FOOTER_MODIFIERS = {
   site: ({ theme }) => `
@@ -50,6 +50,10 @@ const Trademark = styled.p`
   a:hover {
     color: ${({ theme }) => theme.colors.primary};
   }
+
+  ${below.small`
+    margin-top: 4px;
+  `};
 `;
 
 const Footer = ({ className }) => (
